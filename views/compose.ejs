@@ -1,0 +1,12 @@
+<%- include("header") -%>
+
+<h1>Compose</h1>
+
+<form class="item" action="/compose" method="post">
+    <input type="text" name="newEntry" placeholder="">
+    <button type="submit" name="publish" value=<%= journalEntry %>>Publish</button>
+</form>
+
+
+<%- include("footer") -%>
+
