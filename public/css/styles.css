@@ -3,6 +3,21 @@
     padding-bottom: 70px;
 }
 
+input[type="text"] {
+    width: 100%; /* Full width of the container */
+    max-width: 1600px; /* Or any desired fixed width */
+    height: 40px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Makes padding part of the width/height */
+}
+
+.post-width {
+    height: 150px;
+}
+
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;

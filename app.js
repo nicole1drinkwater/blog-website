@@ -40,18 +40,14 @@ app.get("/contact", function(req, res) {
 })
 
 app.get("/compose", function(req, res) {
-    var entry = req.body.newItem;
-
-    console.log(entry);
 
     res.render("compose", {
-        journalEntry : entry
     });
 
 })
 
 app.post("/compose", function(req, res) {
-
+    console.log(req.body.newEntry);
 })
 
 app.listen(3000, function() {

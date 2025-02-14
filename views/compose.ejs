@@ -3,8 +3,13 @@
 <h1>Compose</h1>
 
 <form class="item" action="/compose" method="post">
-    <input type="text" name="newEntry" placeholder="">
-    <button type="submit" name="publish" value=<%= journalEntry %>>Publish</button>
+    <h2>Title</h2>
+    <input class="container-fluid" type="text" name="newTitle" placeholder="">
+
+    <h2>Post</h2>
+    <input class="container-fluid post-width" type="text" name="newEntry" placeholder="">
+
+    <button style="color: white; background-color: rgba(0, 70, 161, 0.836);" type="submit" name="publish" value=>Publish</button>
 </form>
 
 
