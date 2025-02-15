@@ -47,7 +47,13 @@ app.get("/compose", function(req, res) {
 })
 
 app.post("/compose", function(req, res) {
-    console.log(req.body.newEntry);
+
+    const post = {
+        title: req.body.newTitle,
+        entry: req.body.newEntry,
+      };
+    
+    res.redirect("/");
 })
 
 app.listen(3000, function() {
