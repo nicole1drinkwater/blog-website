@@ -6,7 +6,8 @@ const homeStartingContent = "Lorem ipsum dolor sit amet, consectetur adipiscing 
 const aboutContent = "Maecenas porta nisi at lacus varius suscipit. Aliquam vel hendrerit erat. Donec ullamcorper ligula nec augue malesuada, at tempor tellus commodo. Cras gravida quis odio in imperdiet. Sed commodo augue id ligula volutpat, at vulputate neque elementum. Donec nec elit tellus. Integer tempor sit amet ipsum eu semper. Quisque laoreet efficitur lacinia. Phasellus molestie nunc non neque congue, vel dignissim lectus dignissim. Nullam interdum placerat maximus. Integer auctor tellus porta ligula.Mauris odio orci, laoreet in dictum in, congue ac neque. Vestibulum rutrum placerat congue. Mauris at arcu at tortor semper viverra quis a lorem. Integer aliquet consectetur felis, vitae iaculis enim aliquam at. Etiam a pellentesque ligula.";
 const contactContent = "Maecenas magna turpis, congue facilisis arcu sed, sagittis tincidunt eros. Maecenas nec urna vel arcu commodo pellentesque. Aliquam non enim massa. Morbi tempus dolor a interdum tincidunt. Nulla auctor feugiat nulla sit amet facilisis. Fusce ultricies sapien nec ante pulvinar fermentum et quis ex.";
 
-const entries = [];
+const posts = [];
+let numPosts = 0;
 
 const app = express();
 
@@ -18,7 +19,9 @@ app.use(express.static("public"));
 app.get("/", function(req, res) {
 
     res.render("home", {
-        homePageContent: homeStartingContent
+        homePageContent: homeStartingContent,
+        journalPosts : posts,
+        PostsCount : numPosts
     });
 
 })
@@ -53,6 +56,9 @@ app.post("/compose", function(req, res) {
         entry: req.body.newEntry,
       };
     
+    posts.push(post);
+    numPosts++;
+
     res.redirect("/");
 })
 
