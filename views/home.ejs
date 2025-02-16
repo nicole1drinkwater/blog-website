@@ -3,13 +3,10 @@
 <h1>Home</h1>
 <p><%= homePageContent  %></p>
 
-<% for (var i = 0;i < PostsCount; i++ ) { %>
-    
-    <h2> <%= journalPosts[i].title %> </h2>
-    <p> <%= journalPosts[i].entry %></p>
-<% } %>
-
-
+<% journalPosts.forEach(function(post) { %>
+    <h2> <%= post.title %> </h2>
+    <p> <%= post.entry %></p>
+<%  }) %>
 
 <%- include("footer") -%>
 
