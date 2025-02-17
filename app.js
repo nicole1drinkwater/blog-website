@@ -31,15 +31,21 @@ app.get("/", function(req, res) {
 
 app.get("/posts/:postName", function(req, res) {
 
-    const requestedTitle = _.toLower(req.params.postName);
+    const requestedTitle = _.lowerCase(req.params.postName);
 
-    
+    console.log(req.params.postName);
 
     posts.forEach(function(post) {
-        const storedTitle = post.title;
+        const storedTitle = _.lowerCase(post.title);
 
         if (storedTitle === requestedTitle) {
             console.log("Match found!");
+
+            res.render("post", {
+                entryTitle : post.title,
+                entryContent : post.entry,
+            });
+
         } else {
             console.log("Not a match!");
         }
