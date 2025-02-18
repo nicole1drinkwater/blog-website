@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
-// Load the full build.
 var _ = require('lodash');
 
 const homeStartingContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse molestie dui nec porta convallis. Nam ut ante eget massa interdum cursus ut ac tortor. Etiam luctus, mi varius ultricies commodo, ex nisl facilisis leo, eget luctus urna diam quis eros.";
@@ -44,6 +43,7 @@ app.get("/posts/:postName", function(req, res) {
             res.render("post", {
                 entryTitle : post.title,
                 entryContent : post.entry,
+                lodash: _
             });
 
         } else {

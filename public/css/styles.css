@@ -40,6 +40,15 @@ input[type="text"] {
     color: #1abc9c !important;
 }
 
+.truncate-multi {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Number of lines */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 600px;
+}
+
 .footer-padding {
     padding-bottom: 60px;
 }
